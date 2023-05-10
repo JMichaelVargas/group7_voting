@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vargas-BSIT2B</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <%- include('../templates/header.ejs'); %>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="favicon.png" />
+    <script src="socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  </head>
+
+
+  <body>
+    <span id="span_url"><%= socketURL %></span>
+
+    <nav class="navbar navbar-expand-lg bg-black text-uppercase fixed-top" id="mainNav">
+      <div class="container1">
+        <a class="navbar-brand text-light" href="#page-top">Voting App</a>
+      </div>
+    </nav>
+
+      <div class="container">
+        <h1>VOTE FOR THE BEST SMARTPHONE IN THE WORLD!</h1><br>
+        <div class="box-container">
+          <div class="left">
+            <img src="https://png.pngitem.com/pimgs/s/216-2168679_apple-app-store-group-nine-media-logo-hd.png"/>
+            <button type="submit" id="btn_apple" placeholder="Vote">
+              Submit
+            </button>
+          </div>
+          <div class="right">
+            <img src="https://pbs.twimg.com/profile_images/1461094532045582340/U4IZghIs_400x400.png"/>
+            <button type="submit" id="btn_samsung" placeholder="Vote">
+              Submit
+            </button>
+          </div>
+        </div>
+
+    <!-- javascript section -->
+    <script type="text/javascript">
+      var socket = io.connect($("#span_url").html());
+
+      $("#btn_apple").click(function () {
+        socket.emit("vote_apple", "1");
+        socket.emit("vote_samsung", "0");
+        alert("Vote done for Apple.");
+      });
+      $("#btn_samsung").click(function () {
+        socket.emit("vote_apple", "0");
+        socket.emit("vote_samsung", "1");
+        alert("Vote done for Samsung.");
+      });
+    </script>
+
+  <footer> <%- include('../templates/footer'); %></footer>
+  </body>
+</html>

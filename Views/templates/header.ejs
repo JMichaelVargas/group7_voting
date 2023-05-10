@@ -1,0 +1,93 @@
+<style>
+
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.navbar {
+  padding: 1rem;
+  font-size: 1.2rem;
+  height: 70px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.box-container {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid black;
+}
+
+.left, .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.left img, .right img {
+  width: 15rem;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+}
+
+.left img, .right img {
+  transition: transform 0.3s ease;
+}
+
+.left img:hover, .right img:hover {
+  transform: translateY(-10px);
+}
+
+#btn_apple, #btn_samsung {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #212529;
+  color: #fff;
+  cursor: pointer;
+}
+
+#btn_apple:hover, #btn_samsung:hover {
+  background-color: #17a2b8;
+}
+
+#span_apple, #span_samsung {
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 1rem;
+  border: 3px solid black;
+  color: black;
+}
+
+</style>
